@@ -11,17 +11,12 @@ const PORT = process.env.PORT || 5000;
 
 console.log(`Starting server with PORT: ${PORT}`);
 console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+
 // If you're using the cors middleware
-app.use(cors({
-  origin: [
-   "*"
-  ],
-  credentials: true
-}));
 
 // Middleware
 app.use(cors({
-  origin: 'https://vm-prime-tby1.onrender.com', // Allow requests from your frontend
+  origin: "*", // Allow requests from your frontend
   credentials: true
 }));
 app.use(bodyParser.json());
