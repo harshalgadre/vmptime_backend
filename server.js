@@ -11,6 +11,14 @@ const PORT = process.env.PORT || 5000;
 
 console.log(`Starting server with PORT: ${PORT}`);
 console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+// If you're using the cors middleware
+app.use(cors({
+  origin: [
+    'https://vmprime-fronetned-1.onrender.com',
+    'https://vm-prime-tby1.onrender.com'  // Keep the old one if needed
+  ],
+  credentials: true
+}));
 
 // Middleware
 app.use(cors({
